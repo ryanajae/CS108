@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.stanford.cs108.colorpicker.MainActivity">
+
+    <View
+        android:id="@+id/colorBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:layout_above="@+id/rgbValues"/>
+
+    <TextView
+        android:id="@+id/rgbValues"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Red: 0, Green 0, Blue 0"
+        android:textSize="18sp"
+        android:layout_above="@+id/redText"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+        android:id="@+id/redText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Red:"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/greenText"/>
+
+    <SeekBar
+        android:id="@+id/redBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgbValues"
+        android:layout_toEndOf="@+id/greenText"
+        android:layout_toRightOf="@+id/greenText"
+        android:max="255" />
+
+    <TextView
+        android:id="@+id/greenText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Green:"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/blueText"/>
+
+    <SeekBar
+        android:id="@+id/greenBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:layout_toRightOf="@+id/greenText"
+        android:layout_alignTop="@+id/greenText"/>
+
+    <TextView
+        android:id="@+id/blueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blue:"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/changeButton"/>
+
+    <SeekBar
+        android:id="@+id/blueBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/blueText"
+        android:layout_toEndOf="@+id/greenText"
+        android:layout_toRightOf="@+id/blueText"
+        android:max="255"/>
+
+    <Button
+        android:id="@+id/changeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Color"
+        android:onClick="changeColor"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+
+</RelativeLayout>
